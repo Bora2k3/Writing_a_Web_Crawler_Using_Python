@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # scrapy crawl books -o result.json -t json
 from w3lib.url import url_query_cleaner
 from scrapy.spiders import CrawlSpider, Rule

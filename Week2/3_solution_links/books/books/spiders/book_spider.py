@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # scrapy crawl books -o result.csv -t csv && python csv_to_txt.py
 from w3lib.url import url_query_cleaner
 from scrapy.spiders import CrawlSpider, Rule

@@ -10,13 +10,15 @@ logging.basicConfig(
     level=logging.INFO
 )
 domain = 'https://prog-center.pro'
-urls_to_visit = [domain] # список ссылок сайта
-visited_urls = [] # список посещенных ссылок
+urls_to_visit = [domain]  # список ссылок сайта
+visited_urls = []  # список посещенных ссылок
+
 
 def check_link(path):
     return (path.startswith(domain) or path.startswith('/'))
 
-def extract_links(links_list): # очистка списка ссылок
+
+def extract_links(links_list):  # очистка списка ссылок
 
     for link in links_list:
         path = link.get('href')
@@ -28,7 +30,8 @@ def extract_links(links_list): # очистка списка ссылок
                 continue
             urls_to_visit.append(new_url)
 
-def get_linked_urls(url): # парсер ссылок
+
+def get_linked_urls(url):  # парсер ссылок
     message = f'{url} visited urls: {len(visited_urls)} urls to visit: {len(urls_to_visit)}'
     logging.info(f'Crawling: {message}')
 
@@ -38,6 +41,7 @@ def get_linked_urls(url): # парсер ссылок
     extract_links(links_list)
     visited_urls.append(url)
 
+
 for link in urls_to_visit:
     get_linked_urls(link)
 
@@ -46,5 +50,3 @@ with open('urls_to_visit.txt', 'w') as f:
 
 with open('visited_urls.txt', 'w') as f:
     f.write('\n'.join(visited_urls))
-
-

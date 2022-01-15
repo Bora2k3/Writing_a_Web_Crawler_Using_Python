@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 import scrapy
+
 
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
