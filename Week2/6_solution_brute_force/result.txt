@@ -1,0 +1,2 @@
+http://books.toscrape.com/media/
+http://books.toscrape.com/static/

@@ -1,0 +1,1 @@
+scrapy crawl books -o result.csv -t csv && python csv_to_txt.py
